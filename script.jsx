@@ -70,7 +70,7 @@ var MainBox = React.createClass({
     },
     render: function () {
         return (
-            <div className="panel panel-default animated bounceInDown">
+            <div className="MainBox panel panel-default animated bounceInDown">
                 <QuestionBox answer={this.state.answer} />
                 <AnswerBox options={this.state.options} handleOption={this.handleOptionBoxClick}/>
                 <ResetBox onClick={this.handleResetBoxClick} />

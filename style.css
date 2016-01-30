@@ -4,18 +4,68 @@ body {
     transition: background-color 2.5s;
 }
 
+/* how does this works?
+   http://stackoverflow.com/a/22196760/2448540 */
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* iPhone 5 and 5S Portrait */
+.MainBox {
+    min-width: 285px;
+}
 /* how does responsive good?
    https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
-@media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-      /* how does this works?
-         http://stackoverflow.com/a/22196760/2448540 */
-      .vertical-center {
-        min-height: 100%;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-      }
+/* iPhone 5 and 5S Landscape */
+@media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape) {
+        .MainBox {
+            width: 515px;
+        }
+}
+/* iPhone 6 Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+        .MainBox {
+            width: 340px;
+        }
+}
+/* iPhone 6 Landscape */
+@media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape) {
+        .MainBox {
+            width: 600px;
+        }
+}
+/* iPhone 6+ Portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+        .MainBox {
+            width: 375px;
+        }
+}
+/* Phone 6+ Landscape */
+@media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: landscape) {
+        .MainBox {
+            width: 650px;
+        }
 }
