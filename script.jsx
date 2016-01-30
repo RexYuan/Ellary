@@ -26,33 +26,49 @@ var bank = [
     }
 ];
 
-function getOptions () {
+function setQuestion () {
     var temp = [];
     var tempNums = [];
+    var answerIndex = Math.floor(Math.random() * 4);
     while (temp.length < 4) {
         var randKey = Math.floor(Math.random() * bank.length);
         if ($.inArray(randKey, tempNums) == -1) {
+            bank[randKey].revealed = false;
+            bank[randKey].correct = (answerIndex == temp.length) ? true : false;
             temp.push(bank[randKey]);
             tempNums.push(randKey);
         }
     }
-    return temp;
+    return [temp[answerIndex], temp];
 }
 
 var MainBox = React.createClass({
     getInitialState: function () {
-        var options = getOptions();
-        var answerKey = Math.floor(Math.random() * options.length);
-        return {answerKey: answerKey, options: options};
+        var temp = setQuestion();
+        var answer = temp[0];
+        var options = temp[1];
+        return {answer: answer, options: options};
     },
-    componentDidMount: function () {
-        return;
+    handleOptionBoxClick: function (idClicked) {
+        for (var i = 0; i < this.state.options.length; i++)
+        {
+            if (idClicked == this.state.options[i].id)
+            {
+                this.state.options[i].revealed = true;
+                this.setState({options: this.state.options});
+                break;
+            }
+        }
+    },
+    handleResetBoxClick: function () {
+        this.replaceState(this.getInitialState())
     },
     render: function () {
         return (
             <div className="MainBox">
-                <QuestionBox answerKey={this.state.answerKey} options={this.state.options} />
-                <AnswerBox answerKey={this.state.answerKey} options={this.state.options} />
+                <QuestionBox answer={this.state.answer} />
+                <AnswerBox options={this.state.options} handleOption={this.handleOptionBoxClick}/>
+                <ResetBox onClick={this.handleResetBoxClick} />
             </div>
         );
     }
@@ -61,24 +77,25 @@ var MainBox = React.createClass({
 var QuestionBox = React.createClass({
     render: function () {
         return (
-            <div>
-                <h1>{this.props.options[this.props.answerKey].word}</h1>
+            <div className="QuestionBox">
+                {this.props.answer.word}
             </div>
         );
     }
 });
 
+// TODO: how does this "bind" works?
 var AnswerBox = React.createClass({
     render: function () {
         var optionBoxes = this.props.options.map(function(option) {
             return (
-                <OptionBox>
+                <OptionBox key={option.id} onClick={this.props.handleOption.bind(null, option.id)} revealed={option.revealed} correct={option.correct}>
                     {option.meaning}
                 </OptionBox>
             );
-        });
+        }.bind(this));
         return (
-            <div>
+            <div className="AnswerBox">
                 {optionBoxes}
             </div>
         );
@@ -87,9 +104,31 @@ var AnswerBox = React.createClass({
 
 var OptionBox = React.createClass({
     render: function () {
+        var revelation = "unrevealedOption";
+        if (this.props.revealed)
+        {
+            if (this.props.correct)
+            {
+                revelation = "correctOption";
+            }
+            else
+            {
+                revelation = "incorrectOption";
+            }
+        }
         return (
-            <div>
+            <div className={revelation} onClick={this.props.onClick}>
                 {this.props.children}
+            </div>
+        );
+    }
+});
+
+var ResetBox = React.createClass({
+    render: function () {
+        return (
+            <div className="ResetBox" onClick={this.props.onClick}>
+                reset
             </div>
         );
     }

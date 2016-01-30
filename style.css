@@ -1,4 +1,37 @@
+html {
+    background-color: #F7786B;
+    font-family: Helvetica, sans-serif;
+}
+
 .MainBox {
-    max-width: 400px;
+    max-width: 100%;
     margin: 0 auto;
+}
+
+.QuestionBox {
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 11vmin;
+}
+
+.AnswerBox {
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 8vmin;
+}
+
+.unrevealedOption {
+    color: black;
+}
+.correctOption {
+    color: #79C753;
+}
+.incorrectOption {
+    text-decoration: line-through;
+}
+
+.ResetBox {
+    max-width: 50%;
+    margin: 0 auto;
+    font-size: 20vmin;
 }
