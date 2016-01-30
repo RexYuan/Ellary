@@ -1,3 +1,8 @@
+/* Pantone Fashion Colors Spring 2016
+   https://atelierbram.github.io/c-tiles16/colorscheming/pantone-spring-2016-colortable.html */
+/* Serenity, Rose Quartz */
+document.body.style.backgroundColor = ["#f7cac9", "#91A8d0"][Math.floor(Math.random() * 2)];
+
 var bank = [
     {
         "id": 0,
@@ -65,7 +70,7 @@ var MainBox = React.createClass({
     },
     render: function () {
         return (
-            <div className="panel panel-default">
+            <div className="panel panel-default animated bounceInDown">
                 <QuestionBox answer={this.state.answer} />
                 <AnswerBox options={this.state.options} handleOption={this.handleOptionBoxClick}/>
                 <ResetBox onClick={this.handleResetBoxClick} />

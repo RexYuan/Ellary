@@ -1,22 +1,8 @@
 body {
     font-family: Helvetica, sans-serif;
+    background-color: white;
+    transition: background-color 2.5s;
 }
-
-/* Pantone Fashion Colors Spring 2016
-   https://atelierbram.github.io/c-tiles16/colorscheming/pantone-spring-2016-colortable.html */
-.unanswered-bg {
-    /* Serenity */
-    background-color: #91A8d0;
-}
-.correct-bg {
-    /* Green Flash */
-    background-color: #79c753;
-}
-.incorrect-bg {
-    /* Peach Echo */
-    background-color: #f7786b;
-}
-
 
 /* how does responsive good?
    https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
