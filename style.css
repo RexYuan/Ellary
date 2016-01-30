@@ -1,4 +1,7 @@
+/* https://atelierbram.github.io/c-tiles16/colorscheming/pantone-spring-2016-colortable.html */
+
 html {
+    /* Peach Echo */
     background-color: #F7786B;
     font-family: Helvetica, sans-serif;
 }
@@ -24,9 +27,12 @@ html {
     color: black;
 }
 .correctOption {
+    /* Green Flash */
     color: #79C753;
 }
 .incorrectOption {
+    /* Fiesta */
+    color: #dd4132;
     text-decoration: line-through;
 }
 
