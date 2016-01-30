@@ -128,7 +128,7 @@ var ResetBox = React.createClass({
     render: function () {
         return (
             <div className="ResetBox" onClick={this.props.onClick}>
-                reset
+                NEXT
             </div>
         );
     }
