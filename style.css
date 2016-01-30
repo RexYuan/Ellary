@@ -4,6 +4,11 @@ body {
     transition: background-color 2.5s;
 }
 
+/* remove the pesty little select blue outline */
+button:focus {
+    outline:none;
+}
+
 /* how does this works?
    http://stackoverflow.com/a/22196760/2448540 */
 .vertical-center {
