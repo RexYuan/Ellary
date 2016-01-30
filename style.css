@@ -1,63 +1,35 @@
-/* https://atelierbram.github.io/c-tiles16/colorscheming/pantone-spring-2016-colortable.html */
-
-html {
-    /* Peach Echo */
-    background-color: #91A8d0;
+body {
     font-family: Helvetica, sans-serif;
 }
 
-.MainBox {
-    position: fixed;
-    width: 100%;
-    height: 100%;
+/* Pantone Fashion Colors Spring 2016
+   https://atelierbram.github.io/c-tiles16/colorscheming/pantone-spring-2016-colortable.html */
+.unanswered-bg {
+    /* Serenity */
+    background-color: #91A8d0;
 }
-
-.QuestionBox {
-    position: absolute;
-    max-width: 100%;
-    text-align: left;
-    top: 0px;
-    left: 7px;
-    right: 7px;
-    font-size: 45px;
-    background-color: #F7786B;
-}
-
-.AnswerBox {
-    position: absolute;
-    max-width: 100%;
-    text-align: left;
-    top: 70px;
-    left: 7px;
-    right: 7px;
-    font-size: 30px;
-    line-height: 30px;
-}
-
-.unrevealedOption, .correctOption, .incorrectOption {
-    margin-top: 15px;
-    padding: 5px;
-    background-color: #F7786B;
-}
-
-.unrevealedOption {
-    color: black;
-}
-.correctOption {
+.correct-bg {
     /* Green Flash */
-    color: #79C753;
+    background-color: #79c753;
 }
-.incorrectOption {
-    /* Fiesta */
-    color: #dd4132;
-    text-decoration: line-through;
+.incorrect-bg {
+    /* Peach Echo */
+    background-color: #f7786b;
 }
 
-.ResetBox {
-    position: absolute;
-    max-width: 100%;
-    text-align: right;
-    bottom: 10px;
-    right: 18px;
-    font-size: 100px;
+
+/* how does responsive good?
+   https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+      /* how does this works?
+         http://stackoverflow.com/a/22196760/2448540 */
+      .vertical-center {
+        min-height: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
 }

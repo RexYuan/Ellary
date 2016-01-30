@@ -65,7 +65,7 @@ var MainBox = React.createClass({
     },
     render: function () {
         return (
-            <div className="MainBox">
+            <div className="panel panel-default">
                 <QuestionBox answer={this.state.answer} />
                 <AnswerBox options={this.state.options} handleOption={this.handleOptionBoxClick}/>
                 <ResetBox onClick={this.handleResetBoxClick} />
@@ -77,8 +77,8 @@ var MainBox = React.createClass({
 var QuestionBox = React.createClass({
     render: function () {
         return (
-            <div className="QuestionBox">
-                {this.props.answer.word}
+            <div className="panel-heading">
+                <h1>{this.props.answer.word}</h1>
             </div>
         );
     }
@@ -95,7 +95,7 @@ var AnswerBox = React.createClass({
             );
         }.bind(this));
         return (
-            <div className="AnswerBox">
+            <div className="list-group">
                 {optionBoxes}
             </div>
         );
@@ -109,17 +109,17 @@ var OptionBox = React.createClass({
         {
             if (this.props.correct)
             {
-                revelation = "correctOption";
+                revelation = "list-group-item-success";
             }
             else
             {
-                revelation = "incorrectOption";
+                revelation = "list-group-item-danger";
             }
         }
         return (
-            <div className={revelation} onClick={this.props.onClick}>
+            <button type="button" className={"list-group-item "+revelation} onClick={this.props.onClick}>
                 {this.props.children}
-            </div>
+            </button>
         );
     }
 });
@@ -127,8 +127,10 @@ var OptionBox = React.createClass({
 var ResetBox = React.createClass({
     render: function () {
         return (
-            <div className="ResetBox" onClick={this.props.onClick}>
-                NEXT
+            <div className="panel-footer text-right">
+                <button className="btn btn-primary btn-lg" onClick={this.props.onClick}>
+                    NEXT
+                </button>
             </div>
         );
     }
