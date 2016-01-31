@@ -20,22 +20,26 @@
 		<div class="vertical-center">
 			<div class="container">
                 <form id="depositForm">
-                    <div class="form-group" id="groupWord">
-                        <label for="inputWord">Word</label>
-                        <input type="text" class="form-control" id="inputWord" autocomplete="off" placeholder="Example">
+                    <div class="form-group" id="groupQ">
+                        <label for="inputWord">Question</label>
+                        <input type="text" class="form-control" id="inputQ" autocomplete="off" placeholder="Example">
                     </div>
-                    <div class="form-group" id="groupDef">
-                        <label for="inputDef">Definition</label>
-                        <input type="text" class="form-control" id="inputDef" autocomplete="off" placeholder="an instance serving for illustration">
+                    <div class="form-group" id="groupI">
+                        <label for="inputI">Info (optional)</label>
+                        <input type="text" class="form-control" id="inputI" autocomplete="off" placeholder="This optional!">
+                    </div>
+                    <div class="form-group" id="groupA">
+                        <label for="inputA">Answer</label>
+                        <input type="text" class="form-control" id="inputA" autocomplete="off" placeholder="an instance serving for illustration">
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-primary">Enter</button>
+                        <button type="submit" class="btn btn-primary">Do it!</button>
                     </div>
                 </form>
                 <div class="form-group">
-                    <label for="inputDef">Copy this</label>
-                    <textarea class="form-control" id="precursor" rows="8" autocomplete="off" readonly aria-describedby="helpBlock"></textarea>
-                    <span id="helpBlock" class="help-block">helpful chum</span>
+                    <label for="precursor">Copy this</label>
+                    <textarea class="form-control" id="precursor" rows="8" autocomplete="off" readonly aria-describedby="preHelp"></textarea>
+                    <span id="preHelp" class="help-block">helpful chum</span>
                 </div>
 			</div>
 		</div>

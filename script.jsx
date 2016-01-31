@@ -59,6 +59,7 @@ var MainBox = React.createClass({
         return (
             <div className="MainBox panel panel-default animated bounceInDown">
                 <QuestionBox answer={this.state.answer} />
+                <DescriptionBox>{this.state.answer.info}</DescriptionBox>
                 <AnswerBox options={this.state.options} handleOption={this.handleOptionBoxClick}/>
                 <ResetBox onClick={this.handleResetBoxClick} />
             </div>
@@ -70,9 +71,29 @@ var QuestionBox = React.createClass({
     render: function () {
         return (
             <div className="panel-heading">
-                <h1>{this.props.answer.word}</h1>
+                <h1>{this.props.answer.question}</h1>
             </div>
         );
+    }
+});
+
+/* optional */
+var DescriptionBox = React.createClass({
+    render: function () {
+        if (this.props.children)
+        {
+            return (
+                <div className="panel-body">
+                    <p>{this.props.children}</p>
+                </div>
+            );
+        }
+        else
+        {
+            return (
+                <div />
+            );
+        }
     }
 });
 
@@ -82,7 +103,7 @@ var AnswerBox = React.createClass({
         var optionBoxes = this.props.options.map(function(option) {
             return (
                 <OptionBox key={option.id} onClick={this.props.handleOption.bind(null, option.id)} revealed={option.revealed} correct={option.correct}>
-                    {option.meaning}
+                    {option.answer}
                 </OptionBox>
             );
         }.bind(this));
