@@ -23,7 +23,7 @@ Try out the ergonomically designed keyboard shortcuts: place your digits over th
 
 Like what I did with the place? Here's how to make it yours!
 
-1. Clone this repo
+1. Fork this repo
 2. Create branch `gh-pages`
 3. Prepare your test bank data in bank.js or use the [banker](http://ellary.rexy.xyz/banker/), a tool to save you some trouble
 4. Good to go!
@@ -40,7 +40,7 @@ Like what I did with the place? Here's how to make it yours!
 
 To contribute, you can
 
-1. Clone this repo
+1. Fork this repo
 2. Edit
 3. Pull request
 
