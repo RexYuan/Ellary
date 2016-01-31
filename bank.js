@@ -1,28 +1,22 @@
 var bank = [
     {
         "id": 0,
-        "question": "foudroyant",
-        "answer": "sudden and overwhelming in effect",
-        "info": "That's a big word, yo."
+        "question": "Sample question 0",
+        "answer": "sample answer 0"
     },
     {
         "id": 1,
-        "question": "propinquity",
-        "answer": "nearness of blood"
+        "question": "Sample question 1",
+        "answer": "sample answer 1"
     },
     {
         "id": 2,
-        "question": "idyllic",
-        "answer": "charmingly simple or rustic"
+        "question": "Sample question 2",
+        "answer": "sample answer 2"
     },
     {
         "id": 3,
-        "question": "exasperate",
-        "answer": "to irritate or provoke to a high degree"
+        "question": "Sample question 3",
+        "answer": "sample answer 3"
     },
-    {
-        "id": 4,
-        "question": "purview",
-        "answer": "the range of operation"
-    }
 ];
