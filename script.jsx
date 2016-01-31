@@ -1,8 +1,10 @@
+/* background color */
 /* Pantone Fashion Colors Spring 2016
    https://atelierbram.github.io/c-tiles16/colorscheming/pantone-spring-2016-colortable.html */
 /* Serenity, Rose Quartz */
 document.body.style.backgroundColor = ["#f7cac9", "#91A8d0"][Math.floor(Math.random() * 2)];
 
+/* Main */
 function setQuestion () {
     var temp = [];
     var tempNums = [];
@@ -24,6 +26,19 @@ var MainBox = React.createClass({
         var temp = setQuestion();
         var answer = temp[0];
         var options = temp[1];
+
+        /* keyboard shortcut */
+        Mousetrap.bind('space', this.handleResetBoxClick, 'keydown');
+        var temp = this.handleOptionBoxClick;
+        var keys = ['k', 'o', 'p', '\''];
+        var i = 0;
+        options.map(function (option) {
+            Mousetrap.bind(keys[i], function (event) {
+                temp(option.id);
+            });
+            i++;
+        });
+
         return {answer: answer, options: options};
     },
     handleOptionBoxClick: function (idClicked) {
