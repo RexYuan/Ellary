@@ -46,4 +46,4 @@ To contribute, you can
 
 # License
 
-Ellary is [Unlicensed](http://unlicense.org/). Do whatever you want.
+Ellary is released under [the MIT license](https://github.com/RexYuan/Ellary/blob/master/LICENSE).
