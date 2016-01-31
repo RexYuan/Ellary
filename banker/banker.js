@@ -51,4 +51,11 @@ $( document ).ready(function () {
             $ ( "#precursor" ).val( JSON.stringify( entries ) );
         }
     });
+
+    $( "#precursor" ).click(function (event) {
+        this.focus();
+        document.execCommand('SelectAll');
+        document.execCommand("Copy");
+        $( "#helpBlock" ).html("content copied to clipboard!")
+    });
 });
