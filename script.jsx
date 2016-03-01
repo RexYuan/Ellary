@@ -53,7 +53,23 @@ var MainBox = React.createClass({
         }
     },
     handleResetBoxClick: function () {
-        this.replaceState(this.getInitialState())
+        var temp = setQuestion();
+        var answer = temp[0];
+        var options = temp[1];
+
+        /* keyboard shortcut */
+        Mousetrap.bind('space', this.handleResetBoxClick, 'keydown');
+        var temp = this.handleOptionBoxClick;
+        var keys = ['k', 'o', 'p', '\''];
+        var i = 0;
+        options.map(function (option) {
+            Mousetrap.bind(keys[i], function (event) {
+                temp(option.id);
+            });
+            i++;
+        });
+
+        this.setState({answer: answer, options: options});
     },
     render: function () {
         return (
@@ -90,9 +106,7 @@ var DescriptionBox = React.createClass({
         }
         else
         {
-            return (
-                <div />
-            );
+            return null;
         }
     }
 });
@@ -115,6 +129,8 @@ var AnswerBox = React.createClass({
     }
 });
 
+// per the spec, there should be no data change inside render method.
+// must rewrite to fix this.
 var OptionBox = React.createClass({
     render: function () {
         var revelation = "unrevealedOption";

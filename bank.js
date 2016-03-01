@@ -2,11 +2,13 @@ var bank = [
     {
         "id": 0,
         "question": "Sample question 0",
+        "info": "Sample info 0",
         "answer": "sample answer 0"
     },
     {
         "id": 1,
         "question": "Sample question 1",
+        "info": "Sample info 1",
         "answer": "sample answer 1"
     },
     {
