@@ -7,9 +7,9 @@ Ellary is primarily based on [React](https://facebook.github.io/react/). It's de
 # Ellary in action
 Check out some examples!
 
-* [Vocabulary](http://ellary.rexy.xyz/vocab/)
-* [USA Presidents](http://ellary.rexy.xyz/president/)
-* [NBA Players](http://ellary.rexy.xyz/nba/)
+* [Vocabulary](http://ellary.rexyuan.com/vocab/)
+* [USA Presidents](http://ellary.rexyuan.com/president/)
+* [NBA Players](http://ellary.rexyuan.com/nba/)
 
 Try out the ergonomically designed keyboard shortcuts: place your digits over these keys!
 
@@ -25,7 +25,7 @@ Like what I did with the place? Here's how to make it yours!
 
 1. Fork this repo
 2. Create branch `gh-pages`
-3. Prepare your test bank data in bank.js or use the [banker](http://ellary.rexy.xyz/banker/), a tool to save you some trouble
+3. Prepare your test bank data in bank.js or use the [banker](http://ellary.rexyuan.com/banker/), a tool to save you some trouble
 4. Good to go!
 
 :smile::fireworks::clap::dragon_face::icecream:
