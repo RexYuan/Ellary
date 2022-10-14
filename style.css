@@ -4,14 +4,11 @@ body {
     transition: background-color 2.5s;
 }
 
-/* remove the pesty little select blue outline */
 button:active, .button:active, button:focus,
 .button:focus, button:hover, .button:hover {
     outline:none !important;
 }
 
-/* how does this works?
-   http://stackoverflow.com/a/22196760/2448540 */
 .vertical-center {
     min-height: 100%;
     min-height: 100vh;
@@ -21,7 +18,9 @@ button:active, .button:active, button:focus,
 
 /* iPhone 5 and 5S Portrait */
 .MainBox {
+    margin: 0 auto;
     min-width: 285px;
+    max-width: 650px;
 }
 /* how does responsive good?
    https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
